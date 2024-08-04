@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <form id="searchLocation">
+      <i class="fa-solid fa-map-location"></i>
+      <input class="searchInput" type="text" placeholder="Введите название местоположения" />
+      <button id="btnSearch" type="submit">
+        <i class="fa-solid fa-magnifying-glass-location"></i>
+      </button>
+    </form>
+    <div class="err">
+      <div class="loader active">
+      </div>
+      <div class="error">
+        <p> invalid city name</p>
+      </div>
+    </div>
+    <div class="weater">
+      <div class="main">
+        <h2 class="location">
+          <span>-------</span><i class="fa-solid fa-map-location"></i>
+        </h2>
+        <h1 class="temp"><span>--</span>&#176<i class="fa-solid fa-cloud-sun"></i></h1>
+        <div class="ss22">
+          <div class="s1">
+            <h2>Влажность <i class="fa-solid fa-droplet"></i></h2>
+            <h1><span>---</span>% <i class="fa-solid fa-water"></i></h1>
+          </div>
+          <div class="s2">
+            <h2>Ветер <i class="fa-solid fa-wind"></i></h2>
+            <h1><span>---</span> км/ч</h1>
+          </div>
+        </div>
+      </div>
+      <div class="details"></div>
+    </div>
+  </body>
+  <script src="app.js"></script>
+</html>
