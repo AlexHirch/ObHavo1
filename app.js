@@ -5,6 +5,7 @@ const weater = document.querySelector(".weater");
 const weaterIcon = document.querySelector(".temp i");
 const errori = document.querySelector(".error");
 const toTop = document.querySelector(".toTop");
+const detailsWeater = document.querySelector(".details");
 const MapLocation = document.getElementById("MapLocation");
 
 let lat = "";
@@ -12,8 +13,9 @@ let lon = "";
 
 const apiKey = "10ba1b17f3712fbe5abbea4a26a6c746";
 const apiURL = `https://api.openweathermap.org/data/2.5/weather?units=metric&`;
+const apiURL3Days = `https://api.openweathermap.org/data/2.5/forecast?units=metric&cnt=5&`;
 
-function errorClose(){
+function errorClose() {
   errori.classList.remove("errvis");
   loader.classList.add("active");
   weater.classList.remove("active");
@@ -21,7 +23,7 @@ function errorClose(){
 
 searchLocation.onsubmit = (e) => {
   e.preventDefault();
-  if(SearchInput.value == ""){
+  if (SearchInput.value == "") {
     errori.classList.add("errvis");
   }
   weaterCheck(SearchInput.value);
@@ -30,9 +32,9 @@ searchLocation.onsubmit = (e) => {
 };
 
 window.onscroll = () => {
-  if(window.scrollY > 20){
+  if (window.scrollY > 20) {
     toTop.classList.remove("active");
-  }else{
+  } else {
     toTop.classList.add("active");
   }
 };
@@ -41,7 +43,7 @@ const scroolTo0 = () => {
   window.scrollTo({
     top: 0,
     left: 0,
-    behavior: "smooth"
+    behavior: "smooth",
   });
 };
 
@@ -104,6 +106,12 @@ async function weaterCheck2(city) {
   const responce = await fetch(
     apiURL + `lat=${lat}&lon=${lon}` + `&appid=${apiKey}`
   );
+
+  const res2 = await fetch(
+    apiURL3Days + `lat=${lat}&lon=${lon}` + `&appid=${apiKey}`
+  );
+  const data2 = await res2.json();
+  
   if (responce.status == 404) {
     errori.classList.add("errvis");
   }
@@ -133,6 +141,15 @@ async function weaterCheck2(city) {
   } else if (data.weather[0].description == "thunderstorm") {
     weaterIcon.className = "fa-solid fa-smog";
   }
+
+  detailsWeater.innerHTML = `
+  <p>${Math.round(data2.list[0].main.temp)}</p>
+  <p>${Math.round(data2.list[1].main.temp)}</p>
+  <p>${Math.round(data2.list[2].main.temp)}</p>
+  <p>${Math.round(data2.list[3].main.temp)}</p>
+  <p>${Math.round(data2.list[4].main.temp)}</p>
+  `;
+
   errori.classList.remove("errvis");
   loader.classList.add("active");
   weater.classList.remove("active");

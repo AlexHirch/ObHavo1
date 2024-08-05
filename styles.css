@@ -9,29 +9,32 @@
   display: inline-block;
   position: relative;
   border: 5px solid;
-  border-color:#008dde #0000 #00ff99 #0000;
+  border-color: #008dde #0000 #00ff99 #0000;
   border-radius: 50%;
   box-sizing: border-box;
   animation: 1s rotate linear infinite;
 }
-.loader:before , .loader:after{
-  content: '';
+.loader:before,
+.loader:after {
+  content: "";
   top: 0;
   left: 0;
   position: absolute;
   border: 10px solid transparent;
-  border-bottom-color:#00ff55;
-  transform: translate( -4px, 62px) rotate(-35deg);
+  border-bottom-color: #00ff55;
+  transform: translate(-4px, 62px) rotate(-35deg);
 }
 .loader:after {
-  border-color: #0068de #0000 #0000 #0000 ;
+  border-color: #0068de #0000 #0000 #0000;
   transform: translate(70px, 4px) rotate(-50deg);
 }
- @keyframes rotate {
-  100%{    transform: rotate(360deg)}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
-.toTop{
+.toTop {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -46,22 +49,22 @@
   bottom: 20px;
 }
 
-.toTop span{
+.toTop span {
   rotate: -90deg;
   color: white;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 10px;
   background-color: #008dde;
 }
 
-::-webkit-scrollbar-button{
+::-webkit-scrollbar-button {
   background-color: #0068de;
   display: none;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
   background-color: #00fff794;
   border-radius: 10px;
 }
@@ -115,7 +118,7 @@ input {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.err{
+.err {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -145,10 +148,16 @@ form .fa-map-location {
   animation: 1s locationMap linear;
 }
 
-@keyframes locationMap{
-  0% {background-color: rgba(0, 0, 0, 0.3);}
-  50% {background-color: rgb(0, 255, 8);}
-  100% {background-color: rgba(0, 30, 255, 0.3);}
+@keyframes locationMap {
+  0% {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    background-color: rgb(0, 255, 8);
+  }
+  100% {
+    background-color: rgba(0, 30, 255, 0.3);
+  }
 }
 
 form i.fa-magnifying-glass-location:hover {
@@ -168,7 +177,7 @@ form i.fa-magnifying-glass-location {
   display: flex;
   width: 100%;
   height: 550px;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: start;
 }
 
@@ -225,21 +234,21 @@ form i.fa-magnifying-glass-location {
   padding: 10px;
 }
 
-.ss22 .s1 h2{
+.ss22 .s1 h2 {
   font-size: 30px;
 }
-.ss22 .s2 h2{
+.ss22 .s2 h2 {
   font-size: 30px;
 }
 
-.ss22 .s1 h1{
+.ss22 .s1 h1 {
   font-size: 50px;
 }
-.ss22 .s2 h1{
+.ss22 .s2 h1 {
   font-size: 50px;
 }
 
-.error{
+.error {
   position: relative;
   display: none;
   padding: 20px;
@@ -251,7 +260,7 @@ form i.fa-magnifying-glass-location {
   padding-top: 50px;
 }
 
-.error i{
+.error i {
   position: absolute;
   right: 10px;
   top: 10px;
@@ -264,12 +273,19 @@ form i.fa-magnifying-glass-location {
   justify-content: center;
   border-radius: 10px;
 }
-.errvis{
+.errvis {
   display: block;
 }
 
-.active{
+.active {
   display: none;
+}
+
+.details{
+  width: 800px;
+  border: 2px solid white;
+  backdrop-filter: blur(20px);
+  font-size: 30px;
 }
 
 @media screen and (max-width: 720px) {
@@ -277,7 +293,9 @@ form i.fa-magnifying-glass-location {
     background-image: url("https://images.wallpaperscraft.ru/image/single/nebo_oblaka_sumerki_142789_938x1668.jpg");
     width: 100%;
     padding: 20px;
+    background-size: cover;
     align-items: start;
+    height: max-content;
   }
   body form {
     width: 100%;
@@ -297,7 +315,14 @@ form i.fa-magnifying-glass-location {
     font-size: 18px;
     background-color: rgba(44, 255, 44, 0.5);
   }
-  .weater .main{
+  .weater {
+    margin-top: 20px;
+    row-gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    height: max-content;
+  }
+  .weater .main {
     width: 100%;
   }
   .weater .main .location {
@@ -322,9 +347,8 @@ form i.fa-magnifying-glass-location {
     justify-content: center;
     font-size: 20px;
   }
-  .ss22 .s1 h1{
+  .ss22 .s1 h1 {
     width: 100%;
     text-align: center;
   }
-  
 }
