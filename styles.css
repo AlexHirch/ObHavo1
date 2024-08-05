@@ -76,6 +76,7 @@ body {
   justify-content: center;
   align-items: start;
   padding: 20px;
+  min-height: 100vh;
   margin: 0;
 }
 
@@ -224,6 +225,20 @@ form i.fa-magnifying-glass-location {
   padding: 10px;
 }
 
+.ss22 .s1 h2{
+  font-size: 30px;
+}
+.ss22 .s2 h2{
+  font-size: 30px;
+}
+
+.ss22 .s1 h1{
+  font-size: 50px;
+}
+.ss22 .s2 h1{
+  font-size: 50px;
+}
+
 .error{
   display: none;
   padding: 20px;
@@ -250,6 +265,7 @@ form i.fa-magnifying-glass-location {
   }
   body form {
     width: 100%;
+    margin-bottom: 0;
   }
   form input {
     width: 75%;
