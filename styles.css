@@ -240,12 +240,28 @@ form i.fa-magnifying-glass-location {
 }
 
 .error{
+  position: relative;
   display: none;
   padding: 20px;
   color: red;
   font-size: 50px;
-  background-color: rgba(255, 166, 0, 0.476);
+  background-color: rgba(0, 255, 242, 0.644);
   backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding-top: 50px;
+}
+
+.error i{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: rgba(128, 128, 128, 0.346);
+  width: 50px;
+  font-size: 30px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 10px;
 }
 .errvis{

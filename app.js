@@ -13,8 +13,17 @@ let lon = "";
 const apiKey = "10ba1b17f3712fbe5abbea4a26a6c746";
 const apiURL = `https://api.openweathermap.org/data/2.5/weather?units=metric&`;
 
+function errorClose(){
+  errori.classList.remove("errvis");
+  loader.classList.add("active");
+  weater.classList.remove("active");
+}
+
 searchLocation.onsubmit = (e) => {
   e.preventDefault();
+  if(SearchInput.value == ""){
+    errori.classList.add("errvis");
+  }
   weaterCheck(SearchInput.value);
   SearchInput.value = "";
   scroolTo0();
